@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!--所用的資料庫驅動  -->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		
+		<!--所用的資料庫登陸密碼  -->
+		<!--property name="hibernate.connection.password">wilson12345</property -->
+		<property name="connection.username">wilsonUOB</property>
+		<property name="connection.password">wilson12345</property>
+		
+		<property name="dialect"> org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">create</property>
+		<property name="current_session_context_class">thread</property>
+		
+		<!--所用的資料庫名稱為test，根據實際更改 -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/cybersoft?serverTimezone=CTT</property>
+		
+		<!--如果是update表明Hibernate將保留原來的資料記錄，插入時把新記錄添加到已有的表，-->
+		<!--如果是create，則總是創建新的表，如果原來資料庫已有的這個表，則這個表的記錄會被全部清洗  -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!--羅列表裡與java的映射  -->
+		<mapping class="hibernate.Testtable" />
+	</session-factory>
+</hibernate-configuration>
